@@ -13,7 +13,15 @@ export const generateArray = (n) => (
   Array.from({length: n}, (v,k)=>k+1)
 );
 
-console.log(generateArray(25));
+//lab1 ex3
+const generateRandomArray = (n) => (
+  Array.from({length: n}, () => Math.floor(Math.random()*25))
+);
+
+
+
+//testing
+console.log(generateRandomArray(5));
 
 export default MyApp
 
