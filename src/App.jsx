@@ -18,10 +18,16 @@ const generateRandomArray = (n) => (
   Array.from({length: n}, () => Math.floor(Math.random()*25))
 );
 
-
+//lab1ex4
+const ex4 = [2, 56, 23, 88, 17, 4];
+ex4.forEach(function (element){
+  if(element>15){
+    console.log(element);
+  }
+})
 
 //testing
-console.log(generateRandomArray(5));
+//console.log(generateRandomArray(5));
 
 export default MyApp
 
