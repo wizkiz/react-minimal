@@ -9,7 +9,7 @@ const MyApp = () => (
 )
 
 //lab1 ex2 
-export const generateArray = (n) => (
+const generateArray = (n) => (
   Array.from({length: n}, (v,k)=>k+1)
 );
 
@@ -26,8 +26,20 @@ ex4.forEach(function (element){
   }
 })
 
+//lab1ex5
+const ex5 = {
+  arr: [2, 5, 8, 10],
+  squareArr: function () { 
+    var tmp = this.arr;
+    tmp.forEach(function (element, index, arr){
+      arr[index] = Math.pow(element, 2);
+    });
+    return tmp;
+  }
+}
+
 //testing
-//console.log(generateRandomArray(5));
+console.log(ex5.squareArr().toString());
 
 export default MyApp
 
