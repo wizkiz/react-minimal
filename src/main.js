@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 //import MyApp from './App'
-import MyApp from './App'
+import * as xd from './App'
 import AppTitle from './AppTitle'
 
-render(<MyApp />, document.getElementById('reactinjectedhere'))
+render(<xd.MyApp />, document.getElementById('reactinjectedhere'))     

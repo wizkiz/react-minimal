@@ -1,12 +1,90 @@
 import React, {Component} from 'react'
 import AppTitle from './AppTitle'
+import ButtonPanel from './ButtonPanel'
+//import Display from './Display'
+// import clickButton from './clickButton'
 
-const MyApp = () => (
-  <h1>
-    <AppTitle/>
-    <p>Bundle size: 57 bytes, Load time of the bundle: 45 ms, Last commit SHA1: 71550f0b84df81290fc2cd93a63bd71233064347</p>
-  </h1>
-)
+// const MyApp = () => (
+//   <div>
+//     <AppTitle/>
+//     <p>Bundle size: 57 bytes, Load time of the bundle: 45 ms, Last commit SHA1: 71550f0b84df81290fc2cd93a63bd71233064347</p>
+    
+//   </div>
+// )
+
+export let data = [
+  {
+    "teacherName": "Jan Nowak",
+    "teacherAge": 36,
+    "active": true,
+    "students": [
+      {
+        "name": "Maciej Janosz",
+        "age": 12
+      },
+      {
+        "name": "Wojciech Kowalski",
+        "age": 15
+      },
+      {
+        "name": "Wioletta PoznaĹska",
+        "age": 1000000
+      }
+    ]
+  },
+  {
+    "teacherName": "Mariusz Flasinski",
+    "teacherAge": 56,
+    "active": true,
+    "students": [
+      {
+        "name": "Jan Kot",
+        "age": 12
+      },
+      {
+        "name": "Jan Ziobro",
+        "age": 15
+      },
+      {
+        "name": "Adam Malysz",
+        "age": 41
+      }
+    ]
+  },
+  {
+    "teacherName": "Wojciech Kuzak",
+    "teacherAge": 44,
+    "active": false,
+    "students": [
+      {
+        "name": "Janina Wronska",
+        "age": 22
+      },
+      {
+        "name": "John Dover",
+        "age": 7
+      },
+      {
+        "name": "Emil Petterson",
+        "age": 46
+      }
+    ]
+  }
+];
+
+
+export class MyApp extends React.Component {
+
+  render(){
+    return(
+      <div className="component-App">
+        <AppTitle/>
+        <ButtonPanel clickHandler={this.handleClick} />
+        <div id="textfield"/>
+      </div>
+    )
+  }
+}
 
 //lab1 ex2 
 const generateArray = (n) => (
@@ -20,6 +98,7 @@ const generateRandomArray = (n) => (
 
 //lab1ex4
 const ex4 = [2, 56, 23, 88, 17, 4];
+console.log("lab1ex4: ");
 ex4.forEach(function (element){
   if(element>15){
     console.log(element);
@@ -39,8 +118,7 @@ const ex5 = {
 }
 
 //testing
+console.log("lab1ex5")
 console.log(ex5.squareArr().toString());
 
-export default MyApp
-
-
+// export default {MyApp, data};
