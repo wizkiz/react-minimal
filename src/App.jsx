@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import AppTitle from './AppTitle'
 import ButtonPanel from './ButtonPanel'
+import Input from './Input'
 //import Display from './Display'
 // import clickButton from './clickButton'
 
@@ -81,6 +82,7 @@ export class MyApp extends React.Component {
         <AppTitle/>
         <ButtonPanel clickHandler={this.handleClick} />
         <div id="textfield"/>
+        <Input id="inputfield"/>
       </div>
     )
   }
