@@ -13,12 +13,13 @@ export default class Input extends React.Component{
         }
     }
 
+    //I removed console.log(changed value) to decrease console clutter
     handlerA = (event) => {
         event.persist();
         this.setState({
             a: Number(event.target.value),
             arr: xd.generateArray(Number(event.target.value), this.state.b),
-        }, (nextState) => console.log(`Lab2ex1: Value changed a: ${Number(event.target.value)}`))
+        });
     };
     
     
@@ -27,15 +28,18 @@ export default class Input extends React.Component{
         this.setState({
             b: Number(event.target.value),
             arr: xd.generateArray(this.state.a, Number(event.target.value )), 
-        }, (nextState) => console.log(`Lab2ex1: Value changed b: ${Number(event.target.value)}`))
+        });
     };
 
+
+    counter = 0;
     render() {
         const style = {
             display: (this.state.a<this.state.b && this.state.a>0) ? "block" : "none",
             wordWrap: "break-word"
         }
 
+        console.time(`Lab2 ex3: render - ${this.counter}`);
         const content = (
             <div>
                 <p>Lab2</p>
@@ -48,7 +52,9 @@ export default class Input extends React.Component{
                 <input onChange={this.handlerB} type="number" id="input2"/>
                 <div style={style} id="arrField">Lab2 ex2 array:<p>{this.state.arr.toString()}</p></div>
            </div>
-        )
+        );
+        console.timeEnd(`Lab2 ex3: render - ${this.counter++}`);
+
         return content;
     }
 }
