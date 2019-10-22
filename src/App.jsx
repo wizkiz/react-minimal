@@ -111,6 +111,11 @@ export const generateRandomArray = (n) => (
 //   }
 // }
 
+export const squareArray = (arr) => (
+  arr.map(x=>Math.pow(x,2))
+  //Array.from({length: arr.length}, (v,k) => Math.pow(arr[k],2))
+);
+
 //testing
 //console.log("lab1ex5")
 //console.log(ex5.squareArr().toString());
