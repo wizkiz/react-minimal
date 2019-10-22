@@ -75,8 +75,13 @@ export let MyApp = () => (
 
 
 //lab1 ex2 
-const generateArray = (n) => (
-  Array.from({length: n}, (v,k)=>k+1)
+// const generateArray = (n) => (
+//   Array.from({length: n}, (v,k)=>k+1)
+// );
+
+//I assumed that between a, b includes both a and b
+export const generateArray = (a,b) => (
+  Array.from({length: b-a+1}, (v,k) => k+a)
 );
 
 
