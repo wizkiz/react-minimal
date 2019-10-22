@@ -2,16 +2,6 @@ import React, {Component} from 'react'
 import AppTitle from './AppTitle'
 import ButtonPanel from './ButtonPanel'
 import Input from './Input'
-//import Display from './Display'
-// import clickButton from './clickButton'
-
-// const MyApp = () => (
-//   <div>
-//     <AppTitle/>
-//     <p>Bundle size: 57 bytes, Load time of the bundle: 45 ms, Last commit SHA1: 71550f0b84df81290fc2cd93a63bd71233064347</p>
-    
-//   </div>
-// )
 
 export let data = [
   {
@@ -73,54 +63,51 @@ export let data = [
   }
 ];
 
+export let MyApp = () => (
+  <div className="component-App">
+    <AppTitle/>
+    <ButtonPanel/>
+    <div id="textfield"/>
+    <br></br>
+    <Input id="inputfield"/>
+  </div>
+) 
 
-export class MyApp extends React.Component {
-
-  render(){
-    return(
-      <div className="component-App">
-        <AppTitle/>
-        <ButtonPanel clickHandler={this.handleClick} />
-        <div id="textfield"/>
-        <Input id="inputfield"/>
-      </div>
-    )
-  }
-}
 
 //lab1 ex2 
 const generateArray = (n) => (
   Array.from({length: n}, (v,k)=>k+1)
 );
 
+
 //lab1 ex3
-const generateRandomArray = (n) => (
+export const generateRandomArray = (n) => (
   Array.from({length: n}, () => Math.floor(Math.random()*25))
 );
 
 //lab1ex4
-const ex4 = [2, 56, 23, 88, 17, 4];
-console.log("lab1ex4: ");
-ex4.forEach(function (element){
-  if(element>15){
-    console.log(element);
-  }
-})
+// const ex4 = [2, 56, 23, 88, 17, 4];
+// console.log("lab1ex4: ");
+// ex4.forEach(function (element){
+//   if(element>15){
+//     console.log(element);
+//   }
+// })
 
 //lab1ex5
-const ex5 = {
-  arr: [2, 5, 8, 10],
-  squareArr: function () { 
-    var tmp = this.arr;
-    tmp.forEach(function (element, index, arr){
-      arr[index] = Math.pow(element, 2);
-    });
-    return tmp;
-  }
-}
+// const ex5 = {
+//   arr: [2, 5, 8, 10],
+//   squareArr: function () { 
+//     var tmp = this.arr;
+//     tmp.forEach(function (element, index, arr){
+//       arr[index] = Math.pow(element, 2);
+//     });
+//     return tmp;
+//   }
+// }
 
 //testing
-console.log("lab1ex5")
-console.log(ex5.squareArr().toString());
+//console.log("lab1ex5")
+//console.log(ex5.squareArr().toString());
 
 // export default {MyApp, data};
